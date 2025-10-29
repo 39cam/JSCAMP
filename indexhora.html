@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!-- Lo primero que debe tener el código de HTML es el tipo de archivo: html-->
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Portfolio de Camilo</title>
+
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="icon" href="./image.png" />
+
+    <meta name="description" content="39cam: Ingeniero con mucha experiencia" />
+
+    <!-- Open graph -->
+    <meta
+      property="og:title"
+      content="Portaforlio de un ingeniero de software"
+    />
+    <meta property="og:img" content="./image.png" />
+
+    <link rel="alternate" href="https://39cam.dev/en" hreflang="es-GB" />
+
+    <link rel="canonical" href="https://39cam.dev" />
+
+    <style>
+      /* Se pueden poner los estilos acá para esta página
+        también traer scripts y muchas más cosas*/
+    </style>
+  </head>
+
+  <body>
+    <h1>Portfolio de Camilo Ocampo</h1>
+
+    <nav>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contenido" target="_blank" rel="noreferrer">Contenido</a>
+    </nav>
+
+    <main>
+      <!--Contenido que hace a esta página especial y unica-->
+      <p>
+        <strong>Ingeniero telemático</strong> de la Universidad Distrital
+        Francisco José de Caldas
+      </p>
+
+      <h2 id="experiencia">Experiencia</h2>
+
+      <ul>
+        <li class="list-item">Desarrollo de sistema de boletería</li>
+        <li class="list-item">
+          Desarrollo de aplicativo movil para la gestión de gastos
+        </li>
+      </ul>
+
+      <!-- Tecla alt es muy útil para ahorrar escritura -->
+      <a download href="image.png"> <!--Hace que se descargue la imagen a la fuerza con "download"-->
+        <img
+          id="photo-image"
+          width="250"
+          title="Foto de 39cam"
+          alt="Fotografía de Camilo - 39cam"
+          src="./image.png"
+        />
+      </a>
+      <!-- Debo poner mi foto -->
+
+      <h2 id="proyectos">Proyectos realziados</h2>
+
+      <aside>
+        <!--Info relacionada al contenido principal-->
+        <header>
+          <h3><span>Mis tecnologias favoritas</span></h3>
+        </header>
+        <div>
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>Javascript</span>
+          <span>Go</span>
+        </div>
+      </aside>
+
+      <div role="button"></div>
+      <!-- Es posible pero no recomendable asignar roles no acordes-->
+
+      <section>
+        <article>
+          <!-- Contenido de información que se puede entender independientemente si se quita-->
+          <header>
+            <h4>Sitio web corporativo</h4>
+          </header>
+          <p>
+            Desarrollo de un sitio web corporativo con una interfaz amigable y
+            moderna
+          </p>
+          <footer>
+            <small></small>
+          </footer>
+        </article>
+
+        <footer>
+          <a href="mailto:acoc1988@gmail.com"></a>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>
