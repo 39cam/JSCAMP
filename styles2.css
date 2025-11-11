@@ -30,6 +30,35 @@ article {
   }
 }
 
+main > section:nth-child(2) {
+  background-color: var(--card-bg);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+main > section:nth-child(2) form > input{
+  border: none;
+  padding: 0.2rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  border-radius: 15px;
+  margin: 0.2rem;
+}
+
+main > section:nth-child(2) > select{
+  border: none;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  border-radius: 15px;
+}
+
+main > section:nth-child(2) > select > option{
+  border: none;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  border-radius: 15px;
+}
+
 main > section:nth-child(3) footer {
   display: grid;
   gap: 2rem;

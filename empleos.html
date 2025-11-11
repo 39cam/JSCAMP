@@ -6,7 +6,7 @@
     <link rel="icon" href="./images/image.png" />
     <link rel="stylesheet" href="styles2.css" />
     <link rel="alternate" href="https://devjobs.com/en" hreflang="es-GB" />
-    <title>Devjobs - Explora empleos</title>
+    <title>Devjobs - Empleos</title>
     <meta name="viewport" content="width=device-width" />
     <meta property="og-title" content="Devjobs: Encuentra tu próximo empleo" />
     <meta
@@ -15,16 +15,28 @@
     />
     <meta property="og-img" content="./images/img.png" />
     <meta name="robots" content="index" />
+    <meta
+      name="description"
+      content="Listado con empleos y filtros para encontrar el trabajo de tus sueños."
+    />
   </head>
 
   <body>
     <header>
+      <h2>DevJobs</h2>
+
       <nav>
         <a href="./index.html">Inicio</a>
-        <a href="./lookforjob.html">Empleos</a>
-        <a href="./empresas.html">Empresas</a>
-        <a href="./salarios.html">Salarios</a>
+        <a href="./empleos.html" target="_blank" rel="noopener noreferrer">
+          <!--Recomendado para no enviar datos a la página de destino-->
+          Empleos
+        </a>
       </nav>
+
+      <div>
+        <a href="">Publicar un empleo</a>
+        <a href="">Iniciar Sesión</a>
+      </div>
     </header>
 
     <main>
@@ -41,19 +53,31 @@
         </form>
 
         <select name="Tecnología" id="technology">
-          <option value="" selected>Tecnología</option>
+          <option value="" selected disabled>Tecnología</option>
+          <option value="web">Web</option>
+          <option value="movil">Movil</option>
         </select>
 
         <select name="Ubicación" id="location">
-          <option value="" selected>Ubicación</option>
+          <option value="" selected disabled>Ubicación</option>
+          <option value="bogotá">Bogotá</option>
+          <option value="medellin">Medellin</option>
+          <option value="cali">Cali</option>
+          <option value="bucaramanga">Bucaramanga</option>
         </select>
 
         <select name="TipoContrato" id="typeContract">
-          <option value="" selected>Tipo de contrato</option>
+          <option value="" selected disabled>Tipo de contrato</option>
+          <option value="definido">Termino fijo</option>
+          <option value="nodefinido">Termino indefinido</option>
         </select>
 
         <select name="NivelExperiencia" id="exp">
-          <option value="" selected>Nivel de experiencia</option>
+          <option value="" selected disabled>Nivel de experiencia</option>
+          <option value="sinxp">Sin experiencia</option>
+          <option value="2menos">2 años o menos</option>
+          <option value="2a5">Más de 2 años o menos de 5</option>
+          <option value="5a10">Mas de 5 años o menos de 10</option>
         </select>
       </section>
 
@@ -111,5 +135,8 @@
         </footer>
       </section>
     </main>
+    <footer>
+      <small>2025 DevJobs. Todos los derechos reservados.</small>
+    </footer>
   </body>
 </html>

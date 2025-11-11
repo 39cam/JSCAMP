@@ -3,6 +3,7 @@
   --primary-light: #2d4f86;
   --bg: #0d1727;
   --text-muted: #9e9e9e;
+  --primary: #87888a;
 }
 
 article {
@@ -28,6 +29,42 @@ article {
   h3 {
     font-weight: 500;
   }
+}
+
+button{
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--primary);
+  color: white;
+  font-weight: 400;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s; /*Puedo dejar all o background o depende de lo que quiera hacer*/
+  font-family: inherit;
+  font-size: 1rem;
+  white-space: nowrap;
+
+  /*Es posible poner los estados dentro del mismo botón
+  Tal y como puede ser el hover y el focus
+  Hover: Cuando me paro encima del botón
+  Focus: Cuando está seleccionado después de hacer tab
+  Active: Cuando está presionado
+  Disabled: Cuando está deshabilitad
+  */
+  
+  &:hover, &:focus{
+    background-color: var(--primary-light);
+  }
+
+  &:active{
+    transform:scale(0.90)
+  }
+
+  &:disabled{
+    opacity: .5;
+    pointer-events: none; /*Le quito todos los efectos si queda desabilitado*/
+  }
+
 }
 
 main > section:nth-child(2) footer {
