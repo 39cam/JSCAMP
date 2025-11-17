@@ -6,7 +6,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
 
-
     <title>Portfolio de Camilo</title>
 
     <meta name="robots" content="index, follow" />
@@ -23,13 +22,277 @@
     />
     <meta property="og:img" content="./image.png" />
 
+    <link rel="stylesheet" href="styleshora.css" />
+
     <link rel="alternate" href="https://39cam.dev/en" hreflang="es-GB" />
 
     <link rel="canonical" href="https://39cam.dev" />
 
     <style>
-      /* Se pueden poner los estilos acá para esta página
-        también traer scripts y muchas más cosas*/
+      /*
+      selector{
+        propiedad: valor; (declaración)
+      }
+      */
+
+      h1 {
+        color: rgb(0, 38, 255); /*Seleccionando todos los h1*/
+        /*border-width: 3px;
+        border-style: solid;
+        border-color: currentColor; /*Toma el color del color del texto
+        Un atajo para poner borde es: 
+        border:3px solid #fff;
+          Grosor  Estilo  Color 
+        */
+
+        /*
+
+        /*Si yo quito el color del h1 current color sería el color del body*/
+
+        /*rgba quedó obsoleto: ahora
+        se recomienda otras opciones y no esta
+        rgba(0,0,0,10%): No recomendado*/
+
+        /*Ahora se usa de esta manera ----->
+        color: rgb(0 0 0 / 0.2 /*20% de opacidad);
+
+
+        Otra forma de poner color es:
+        color: hsl(100, 100, 16);
+        En donde h: Matiz
+        s: saturación
+        l: luminosidad
+
+
+        Otra forma más reciente es:
+        color: oklch();
+        Este puede ser el futuro
+        Recibe 3 o 4 parametros:
+        Lightness
+        Chroma
+        Hue. Similar a hsl
+
+
+        E incluso se pueden usar palabras claves como black o
+        incluso transparent
+        color: transparent;
+
+        Existe una forma de asignar colores hexadecimal con solo 3
+        caracteres: #fff : #ffffff
+        */
+        font-family: monospace;
+      }
+
+      body {
+        background: rgb(10 10 10 / 0.25);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        /* Carga las fuentes de cada sistema operativo con system-ui */
+      }
+
+      .link {
+        /*Las clases usan . */
+        color: red;
+      }
+
+      .link:hover {
+        color: yellow;
+        outline: 3px solid red; /*Contorno, no es borde*/
+        /*border: 3px solid red*/
+        /*Existe algo llamado outline, es similar al borde pero no afecta al
+        tamaño del contenido, no cambia dimensiones*/
+      }
+
+      .link:active {
+        /*Cuando se presiona el click sobre ese elemento*/
+        outline: 5px solid orangered;
+      }
+
+      /*También está la pseudoclase de focus: cuando está tabulado sobre ese
+      elemento*/
+
+      #show {
+        /* Los ids usan # */
+        background: rgb(10 10 10 / 0.25);
+      }
+
+      /* Se debe evitar modificar selectores basicos e identificadores 
+      Mejor tener pocas clases que no muchos identificadores*/
+
+      /*Se heredan los estilos de cajas a sus elementos internos
+
+      Ciertas propiedades no se heredan: como border, érp se puede heredar si se 
+      aplica de esta manera
+
+
+      .container{
+        border:1px solid #fff;
+        font-size: 12px;
+      }
+
+      .child{
+        border:inherit; // Lo hereda del padre de forma forzada
+        (Suponiendo que la clase child está dentro de la clase container)
+      }
+
+      Existen otros valores como 
+      : initial
+      : revert (revertir el valor de la herencia)
+      : unset
+      : inherit
+
+      por ejemplo font-size: initial; # Ya no heredaría del padre
+
+      El valor por defecto de revert es inherit
+      */
+
+      input:focus {
+        border: 5px solid black;
+      }
+
+      /*Pseudo clases son estados o situaciones de ciertos elementos*/
+
+      li {
+        color: orangered;
+      }
+
+      li:first-child {
+        /*También son pseudoclases*/
+        color: green;
+      }
+
+      li:last-child {
+        color: blue;
+      }
+
+      ul li {
+        border: 1px solid red;
+      }
+
+      ol li {
+        border: 1px solid black;
+      } /*Forma de diferenciar mismos elementos ubicados en otro lado*/
+
+      /*Puedo señalar estilos para hijos directos y no necesariamente para todos
+      los elementos dentro de una caja, es decir...*/
+
+      /*main > footer{} != main footer{}*/
+
+      /*body footer{ # Tomaría cada footer de la página
+        background:pink
+        
+        En cambio si hago esto, solo tomaría el hijo footer directo */
+
+      body > footer{
+        background: pink;
+      } 
+
+      /*Este aplica estilos a elementos dentro de un mismo campo (caja)
+      Pero que van despúes de cierto elemento:
+
+      Por ejemplo
+
+      p ~ span{
+        color: red;
+      } : Los span que van despúes de las p serán rojos
+      Solo aplica para hermanos
+
+
+      p + span{ 
+        color: yellow;
+      }: El siguiente y solo el siguiente hermano de p que sea span será de color amarillo 
+      Solo aplica para hermanos
+
+      */
+
+
+
+
+      /*CASCADA: La filosofía de CSS es sobreescribir estilos, así que
+      si se tienen 2 selectores identicos, el último será el que se
+      tendrá en cuenta*/
+
+      p{
+        color: aqua;
+        font-weight: bold;
+        font-size:24px;
+      }
+
+      p{
+        color: purple;
+        font-size: 12px;
+      }
+
+      /*De igual forma se pueden hacer fallbacks: respaldos ante problemas:
+      */
+
+      /*Esto no es posible si primero lo denomino con una clase y luego sobre
+      escribo con un selector general, es decir
+      
+      .parrafo-clase{
+        color: orange;
+      }
+
+      p{
+        color:black;
+      } # Acá no modificará a ese parrafo de arriba pq al ser una clase es mucho
+       más específico
+
+       La jerarquía va en el orden
+
+       1. Elementos en linea: los estilos que se ponen como atributo style 
+       (No recomendable)
+       2. Identificadores: #
+       3. Clases: .
+       4. Elementos generale (p, a, article, etc.)
+
+
+       Yo incluso puedo estilar así:
+
+      <p class="text" id="text" style="color:yellow">Hola mundo</p>
+
+      #text{
+        color: green;
+      }
+
+      .text{
+        color: orange;
+      }
+
+      p{
+        color: brown;
+      }
+
+      Aunque en la jerarquia de estilos gane el id: "#text", el estilo en linea es
+      más específico, por lo que el color del texto sería amarillo
+
+      Si se quita eso, sería:
+
+      1. Verde
+      2. Naranja
+      3. Café
+    
+      pero al dejarlo quedaría como:
+
+      1. Amarillo
+      2. Verde
+      3. Naranja
+      4. Café      
+
+      !important sobre escribe sobre todo, pero también se pueden empatar 2 importants
+      */
+
+      p{ 
+        color: #15f5ea; /*Si no puede acceder al oklch (xq es muy reciente)
+        Entonces usará el último q puse, q es un hexadecimal y ya
+        : A esto se llama fallback y busca compatibilidad*/
+        color: oklch(0.7181 0.185 161.47);
+        font-size: 12px;
+      }     
+
+      
+
     </style>
   </head>
 
@@ -38,16 +301,18 @@
       <h1>Portfolio de Camilo Ocampo</h1>
 
       <nav>
-        <a href="#experiencia">Experiencia</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#contenido" target="_blank" rel="noreferrer">Contenido</a>
+        <a class="link" href="#experiencia">Experiencia</a>
+        <a class="link" href="#proyectos">Proyectos</a>
+        <a class="link" href="#contenido" target="_blank" rel="noreferrer"
+          >Contenido</a
+        >
       </nav>
     </header>
 
     <dialog id="dialog">
-      <h1>sabias qu xuedes abrir un monda</h1>
+      <h1>¿Sabias que puedes abrir una alerta así (modal)?</h1>
       <p>y es totalmente nativo</p>
-      <button id="hide">Cerrar modal</button>
+      <button id="hide">Cerrar alerta (modal)</button>
     </dialog>
 
     <button id="show">Ver mas info</button>
@@ -122,7 +387,7 @@
           <header>
             <h4>La pagina de tesla</h4>
           </header>
-          <p>Elon me llamo y hice esto en una tarde</p>
+          <p>Elon me llamo e hice esto en una tarde</p>
 
           <!--Lazy hace que no cargue al comienzo; buscando rendimiento
           No usar en imagenes muy arriba para no tener parpadeo-->
@@ -148,7 +413,7 @@
         <h2>Preguntas frecuentes</h2>
 
         <details open>
-          <summary>Que estudios tienes?</summary>
+          <summary>Que estudios tengo?</summary>
           <p>
             Estudié en la Universidad Distrital una ingenieria telemática de 6
             años
@@ -169,7 +434,7 @@
         </details>
       </section>
 
-      <form action="/" method="POST">
+      <form action="" method="POST">
         <fieldset>
           <legend>Información personal</legend>
 
@@ -218,6 +483,7 @@
           <div>
             <label for="why">Pq quieres contactarnos</label>
             <select name="why" id="why">
+              <option selected disabled value="">Selecciona una opción</option>
               <option value="1">Trabajo</option>
               <option value="2">Duda</option>
               <option value="3">Mas info</option>
@@ -235,6 +501,7 @@
               <option>Python</option>
               <option>C++</option>
               <option>C#</option>
+              <option>Go</option>
             </datalist>
             <label>
               con qué lenguajes quieres q te ayude
@@ -251,7 +518,7 @@
     <footer>
       <p>Copyright derechos reservados</p>
       <a href="mailto:acoc1988@gmail.com">Mi correo electrónico</a>
-      <a href="mailto:acoc1988@gmail.com">Mi número de teléfono</a>
+      <a href="+573012299159">Mi número de teléfono</a>
       <a href="whatsapp://send?text=Hola camilo">Mi whatsapp</a>
     </footer>
   </body>
