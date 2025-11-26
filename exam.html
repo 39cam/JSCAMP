@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola</title>
+
+    <style>
+
+        .caja1{
+            /*Los px no son unidad absoluta, 
+            varia segun pantallas*/
+            width: 250px;
+            height: 250px;
+            background: red;
+
+            /*Si yo uso viewport la cosa
+            cambia*/
+
+            width: 50vw;
+            height: 50vh;
+            box-sizing: border-box;
+            border: 10px solid orange;
+            padding: 5px;
+
+        } /*Esta caja usa box sizing borderbox*/
+
+        .caja2{
+            width: 250px;
+            height: 250px;
+            background: red;
+
+            /*En esta uso el content box
+            para apreciar la diferencia*/
+
+            width: 50vw;
+            height: 50vh;
+            box-sizing: content-box;
+            border: 10px solid orange;
+            padding: 5px;
+            margin-top: 15px;
+
+        }                 
+
+        /*Es necesario indicarle al hijo el 
+        tamanio de su padre para que se 
+        ubique y darle medida en pixeles*/
+        body{
+            border: 0;
+            margin: 0; /*por defecto este
+            estilo no se aplica, se le da
+            una cantidad de 8 de margin al
+            body "sin estilos"*/
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <main>
+
+        <section>
+
+            <article class="caja1">
+                hola soy homelo
+            </article>
+
+            <article class="caja2">
+                si
+            </article>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
