@@ -1,0 +1,16 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.euno{
+    color: rgba(112 8 8 / 0.904);
+}
+
+.edos{
+    color: hsl(50 94 34);
+}
+
+.etres{
+    color: oklch(20 50 70);
+}
