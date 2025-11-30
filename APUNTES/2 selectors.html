@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="2 selectors.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>Selectores en CSS</h1>
+    </header>
+    <main>
+      <section>
+        <header>
+          <h2>Lista de selectores y formas de aplicar estilos</h2>
+        </header>
+
+        <footer>
+          <article>
+            <h3>Estilos en línea</h3>
+            <p style="color: red">Estructura: Aplicado dentro del HTML</p>
+            <p style="color: red">p style="color: orange"</p>
+            <p style="color: rgb(70, 8, 8)">Especificidad media / alta</p>
+          </article>
+
+          <article>
+            <h3>Selector para elementos predefinidos</h3>
+            <p style="color: red">Estructura: body{}</p>
+            <p style="color: rgb(70, 8, 8)">Especificidad muy baja</p>
+          </article>
+
+          <article>
+            <h3>Selector para clases</h3>
+            <p style="color: red">Estructura: .container{}</p>
+            <p style="color: rgb(70, 8, 8)">Especificidad media / alta</p>
+          </article>
+
+          <article>
+            <h3>Selector para identificadores</h3>
+            <p style="color: red">Estructura: #container{}</p>
+            <p style="color: rgb(70, 8, 8)">Especificidad muy alta</p>
+          </article>
+        </footer>
+      </section>
+
+      <section>
+        <header>
+          <h2>Jerarquia y más selectores</h2>
+          <p>
+            Como se puede apreciar, previamente se explicó la especificidad de
+            los selectores, esto se destaca debido a que la especificidad define
+            la jerarquia e importancia de estilos, cuál de todos se definirá
+            primero, teniendo el siguiente listado en ese orden dado
+          </p>
+        </header>
+        <footer>
+          <ol>
+            <li>
+              !important: Si se define important, el estilo se aplicará
+              practicamente a la fuerza
+            </li>
+            <li>Estilo en linea</li>
+            <li>Especificidad por id</li>
+            <li>Especificidad por clase</li>
+            <li>Especificidad por referencia (selfnamed)</li>
+            <li>Especificidad por elementos predefinidos</li>
+          </ol>
+
+          <p>
+            Los selectores con especificidad por referencia están relacionados a
+            elementos llamados inicialmente por su padre, teniendo la siguiente
+            estructura
+          </p>
+          <p>ol li{...}</p>
+          <p>
+            En donde se indica que los elementos li que estén dentro de ol deben
+            aplicar cierto estilo. La jerarquia puede cambiar drasticamente si a
+            esto se le especifica una clase, por ejemplo...
+          </p>
+          <p>.container p{...}</p>
+          <p>Teniendo así mayor especificidad</p>
+        </footer>
+      </section>
+      <section>
+        <header>
+            <h2>Pseudo clases y otros selectores</h2>
+            <p>Otra forma de aplicar estilos es a pseudoclases...</p>
+        </header>
+
+        <footer>
+            
+        </footer>
+        
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+</html>
